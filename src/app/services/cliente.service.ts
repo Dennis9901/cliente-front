@@ -16,8 +16,8 @@ export class ClienteService {
   agregar(clienteData: FormData) {
     return this.http.post(this.apiUrl, clienteData);
   }
-  actualizar(cliente: any, id?: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}${cliente.id}`, cliente);
+  actualizar(clienteData: FormData, id?: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}${id}`, clienteData);
   }
 
   eliminar(id: number): Observable<void> {
